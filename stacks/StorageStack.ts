@@ -1,5 +1,4 @@
 import { Bucket, StackContext, Table } from "sst/constructs";
-import { StackContext, Table } from "sst/constructs";
 
 export function StorageStack({ stack }: StackContext) {
     // Create an S3 bucket
