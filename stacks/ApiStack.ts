@@ -19,8 +19,13 @@ export function ApiStack({ stack }: StackContext) {
   const api = new Api(stack, "Api", {
     defaults: {
       authorizer: "iam",
-      // Uncomment only if you want to use CORS
+      // According to https://sst.dev/chapters/handle-cors-in-serverless-apis.html, 
+      // cors is enabled by default in the SST Api construct that we are using
       // cors: true,
+      // We can further configure the specifics if necessary
+      // cors: {
+      //   allowMethods: ["get"],
+      // },
       function: {
         bind: [table, STRIPE_SECRET_KEY],
       },
