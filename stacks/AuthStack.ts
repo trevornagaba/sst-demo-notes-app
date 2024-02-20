@@ -5,8 +5,8 @@
 // 2. The Auth construct creates a Cognito User Pool for us. 
 //    We are using the login prop to state that we want our users to login with their email.
 // 3. The Auth construct also creates an Identity Pool. 
-//    The attachPermissionsForAuthUsers function allows us to specify the resources our authenticated users 
-//    will have access to.
+//    The attachPermissionsForAuthUsers function allows us to specify the resources our authenticated  
+//    users will have access to.
 // 4. This new AuthStack references the bucket resource from the StorageStack and 
 //    the api resource from the ApiStack that we created previously.
 // 5. And we want them to access our S3 bucket. We’ll look at this in detail below.

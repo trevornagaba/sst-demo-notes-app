@@ -9,12 +9,12 @@
 // 6. Finally, we are printing out the URL of our API as an output by calling stack.addOutputs. 
 //    We are also exposing the API publicly so we can refer to it in other stacks.
 
-import { Api, StackContext, use } from "sst/constructs";
+import { Api, Config, StackContext, use } from "sst/constructs";
 import { StorageStack } from "./StorageStack";
 
 export function ApiStack({ stack }: StackContext) {
   const { table } = use(StorageStack);
-
+  const STRIPE_SECRET_KEY = new Config.Secret(stack, "STRIPE_SECRET_KEY");
   // Create the API
   const api = new Api(stack, "Api", {
     defaults: {
@@ -22,7 +22,7 @@ export function ApiStack({ stack }: StackContext) {
       // Uncomment only if you want to use CORS
       // cors: true,
       function: {
-        bind: [table],
+        bind: [table, STRIPE_SECRET_KEY],
       },
     },
     routes: {
@@ -31,6 +31,7 @@ export function ApiStack({ stack }: StackContext) {
       "GET /notes": "packages/functions/src/list.main",
       "PUT /notes/{id}": "packages/functions/src/update.main",
       "DELETE /notes/{id}": "packages/functions/src/delete.main",
+      "POST /billing": "packages/functions/src/billing.main",
     },
   });
 
