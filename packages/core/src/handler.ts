@@ -27,6 +27,7 @@ export default function handler(
     return {
       body,
       statusCode,
+      // Added these headers to enable cors
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true,

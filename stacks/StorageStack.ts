@@ -2,6 +2,7 @@ import { Bucket, StackContext, Table } from "sst/constructs";
 
 export function StorageStack({ stack }: StackContext) {
     // Create an S3 bucket
+    // Add headers to enable cors
     const bucket = new Bucket(stack, "Uploads", {
         cors: [
             {

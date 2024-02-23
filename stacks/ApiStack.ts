@@ -26,6 +26,9 @@ export function ApiStack({ stack }: StackContext) {
       // cors: {
       //   allowMethods: ["get"],
       // },
+      
+      // We are binding our DynamoDB table to our API using the bind prop. 
+      // This will allow our API to access our table.
       function: {
         bind: [table, STRIPE_SECRET_KEY],
       },
