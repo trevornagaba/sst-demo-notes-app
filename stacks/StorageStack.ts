@@ -22,6 +22,11 @@ export function StorageStack({ stack }: StackContext) {
         primaryIndex: { partitionKey: "userId", sortKey: "noteId" },
     });
 
+    // Show the auth resources in the output
+    stack.addOutputs({
+        Bucket: bucket.bucketName,
+    });
+
     return {
         bucket,
         table,

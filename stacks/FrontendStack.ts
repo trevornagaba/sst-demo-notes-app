@@ -13,6 +13,10 @@ export function FrontendStack({ stack, app }: StackContext) {
     path: "packages/frontend",
     buildCommand: "pnpm run build",
     buildOutput: "dist",
+    // Configure to deploy add, even in development mode
+    // dev: {
+    //   deploy: true
+    // },
     // Pass in our environment variables
     environment: {
       VITE_API_URL: api.url,

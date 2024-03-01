@@ -15,5 +15,7 @@ const config = {
       IDENTITY_POOL_ID: import.meta.env.VITE_IDENTITY_POOL_ID,
     },
   };
+
+  console.log(import.meta.env)
   
   export default config;

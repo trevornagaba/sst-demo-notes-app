@@ -19,6 +19,8 @@ import './index.css'
 //    It isn’t doing anything else special here beside configuration. 
 //    So while this might look intimidating, just remember this is only setting things up.
 
+console.log(config)
+
 Amplify.configure({
   Auth: {
     mandatorySignIn: true,
