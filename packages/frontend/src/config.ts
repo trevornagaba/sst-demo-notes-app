@@ -1,6 +1,6 @@
 const config = {
   // STRIPE PAYMENTS KEYS
-  STRIPE_KEY: "pk_live_kpXnByjEUTX6HlBtYsGKiuRq",
+  STRIPE_KEY: "pk_test_fT7WURao6k9lwUF51etg9ZJ4",
   // Frontend config
   MAX_ATTACHMENT_SIZE: 5000000,
   // Backend config
